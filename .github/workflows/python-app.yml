@@ -26,7 +26,7 @@ jobs:
         echo "Downloaded Pandoc"
         pwd
         ls
-        sudo dpkg -i pandoc.deb
+        sudo dpkg -i ./pandoc.deb
     - name: Publish
       run: |
         python3 ./publish.py posts/*
