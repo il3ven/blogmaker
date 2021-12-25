@@ -2,3 +2,6 @@
 [icon]: <> (http://vitalik.ca/images/icon.png)
 [server]: <> (root@vitalik.ca)
 [website_root]: <> (/var/www/html)
+[posts_directory]: <> (general)
+[homepage_category]: <> (general)
+[domain]: <> (https://il3ven.github.io/blogmaker-github-actions)
