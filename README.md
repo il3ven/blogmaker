@@ -1,11 +1,11 @@
 # Blogmaker
 
-This is an ultra-simple self-hosted blog publishing solution.
+This is an ultra-simple blog publishing solution. It is configured to be hosted on GitHub and be automatically built using GitHub actions.
 
-### Dependencies
+### Dependencies for local development
 
 * pandoc
-* rsync
+* rsync (Only needed if you plan to publish the blog on your server)
 
 ### How to use
 
@@ -23,6 +23,12 @@ To compile a post to html, run `./publish.py posts/name_of_post.md` (or `./publi
 
 For the server, the simplest setup is to use any VPS, `apt install apache2`, make sure apache2 is running, and just set the directory to /var/www/html.
 
-### Misc
+#### Hosting on GitHub pages
+- Turn on GitHub pages from settings and set the branch as gh-pages and directory as root.
+- Change the domain to your repo from `config.md`
+- Push changes to `main` and voila!
 
-Credit to https://hackmd.io for CSS styles.
+### Credits:
+
+- https://hackmd.io for CSS styles.
+- @vbuterin for building and making his blogmaker open source.
