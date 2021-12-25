@@ -30,7 +30,7 @@ HEADER_TEMPLATE = """
 <link rel="stylesheet" type="text/css" href="$root/css/pretty.0ae3265014f89d9850bf.css">
 <link rel="stylesheet" type="text/css" href="$root/css/pretty-vendor.83ac49e057c3eac4fce3.css">
 <link rel="stylesheet" type="text/css" href="$root/css/misc.css">
-<link rel="icon" type="image/x-icon" href="{}">
+<link rel="icon" type="image/x-icon" href="$root/$icon">
 
 <script type="text/x-mathjax-config">
 <script>
@@ -231,11 +231,11 @@ def make_toc(toc_items, global_config, all_categories, category=None):
     else:
         title = global_config['title']
         root_path = '.'
-
+    # print(HEADER_TEMPLATE.replace('$root', root_path))
     return (
         PRE_HEADER +
         RSS_LINK.format(root_path, title) +
-        HEADER_TEMPLATE.replace('$root', root_path).format(global_config["icon"]) +
+        HEADER_TEMPLATE.replace('$root', root_path).replace('$icon', global_config['icon']) +
         make_twitter_card(title, global_config) +
         TOC_TITLE_TEMPLATE.format(title) +
         make_categories_header(all_categories, root_path) +
@@ -272,7 +272,7 @@ if __name__ == '__main__':
         total_file_contents = (
             PRE_HEADER +
             RSS_LINK.format(root_path, metadata['title']) +
-            HEADER_TEMPLATE.replace('$root', root_path).format(global_config["icon"]) +
+            HEADER_TEMPLATE.replace('$root', root_path).replace('$icon', global_config["icon"]) +
             make_twitter_card(metadata['title'], global_config) +
             TITLE_TEMPLATE.format(metadata['title'], get_printed_date(metadata), root_path) +
             defancify(open('/tmp/temp_output.html').read()) +

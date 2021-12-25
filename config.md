@@ -1,5 +1,5 @@
 [title]: <> (il3ven's website)
-[icon]: <> (./images/favicon.png)
+[icon]: <> (images/favicon.png)
 [server]: <> (github.com)
 [website_root]: <> (/var/www/html)
 [posts_directory]: <> (general)
