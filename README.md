@@ -6,6 +6,7 @@ This is an ultra-simple blog publishing solution. It is configured to be hosted 
 
 * pandoc
 * rsync (Only needed if you plan to publish the blog on your server)
+  * Not needed if you are hosting on GitHub
 
 ### How to use
 
@@ -19,11 +20,16 @@ If you need a post to use MathJaX to format LaTeX equations, add the line
 
 to the config at the top of the post.
 
-To compile a post to html, run `./publish.py posts/name_of_post.md` (or `./publish.py posts/*` to recompile everything). Use `./publish.py --sync` to upload the latest version of your site to your server (make sure to put your server details, as well as the site title and icon, in [config.md](./config.md)).
+To compile a post to html, run `./publish.py posts/name_of_post.md` (or `./publish.py posts/*` to recompile everything). Compilation also happens on GitHub Actions.
+
+#### Using your own server
+
+Use `./publish.py --sync` to upload the latest version of your site to your server (make sure to put your server details, as well as the site title and icon, in [config.md](./config.md)).
 
 For the server, the simplest setup is to use any VPS, `apt install apache2`, make sure apache2 is running, and just set the directory to /var/www/html.
 
 #### Hosting on GitHub pages
+- Fork/clone this repo.
 - Turn on GitHub pages from settings and set the branch as gh-pages and directory as root.
 - Change the domain to your repo from `config.md`
 - Push changes to `main` and voila!
